@@ -49,9 +49,9 @@ This is **front-end** application for **Todo App**, built with **Next.js**, **Ty
 
 4.  Run the development server:
 
-        ```bash
-        npm run dev
-        ```
+    ```bash
+    npm run dev
+    ```
 
 5.  Open the app in your browser:
 
@@ -61,6 +61,6 @@ This is **front-end** application for **Todo App**, built with **Next.js**, **Ty
 
 Available scripts for development and production:
 
-    - `npm run dev`: Starts the development server.
-    - `npm run build`: Builds the application for production.
-    - `npm start`: Starts the production server (requires a production build).
+    - npm run dev      (Starts the development server)
+    - npm run build    (Builds the application for production)
+    - npm start        (Starts the production server (requires a production build))
