@@ -1,0 +1,26 @@
+Front-End (Next.js)
+
+Setup Instructions
+- Clone the repository:
+    git clone https://github.com/kshashikumar/todoapp-client.git
+    cd todoapp-client
+
+- Install dependencies: npm install
+
+- Set up environment variables:
+    Create a .env.local file in the project root.
+    Add the following variables (update the backend URL as needed):
+    NEXT_PUBLIC_API_URL=http://localhost:4000/api
+
+- Run the development server: npm run dev
+
+- Open the app in your browser:
+    Navigate to http://localhost:3000
+
+
+Scripts: 
+
+npm run dev: Starts the development server.
+npm run build: Builds the production version of the app.
+npm start: Starts the production server.
+
