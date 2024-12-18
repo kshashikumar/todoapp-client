@@ -29,33 +29,33 @@ This is **front-end** application for **Todo App**, built with **Next.js**, **Ty
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kshashikumar/todoapp-client.git
-   cd todoapp-client
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Set up environment variables:
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/kshashikumar/todoapp-client.git
+    cd todoapp-client
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Set up environment variables:
 
-   - Create a `.env.local` file in the project root.
-   - Add the following variable (update the URL if needed):
+    - Create a `.env.local` file in the project root.
+    - Add the following variable (update the URL if needed):
 
-   ```bash
-   NEXT_PUBLIC_API_URL=http://localhost:4000/api
-   ```
+      ```bash
+      NEXT_PUBLIC_API_URL=http://localhost:4000/api
+      ```
 
-4. Run the development server:
+4.  Run the development server:
 
-   ```bash
-   npm run dev
-   ```
+        ```bash
+        npm run dev
+        ```
 
-5. Open the app in your browser:
+5.  Open the app in your browser:
 
-   - Navigate to [http://localhost:3000](http://localhost:3000).
+    - Navigate to [http://localhost:3000](http://localhost:3000).
 
 ### Scripts
 
