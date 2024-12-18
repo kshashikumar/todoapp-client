@@ -19,7 +19,7 @@ export function TaskForm() {
       const fetchTask = async () => {
         try {
           const response = await fetch(
-            `http://localhost:4000/api/tasks/${taskId}`
+            `${process.env.NEXT_PUBLIC_API_URL}/tasks/${taskId}`
           );
           const task = await response.json();
           setTitle(task.title);
@@ -38,8 +38,8 @@ export function TaskForm() {
     try {
       const method = taskId ? "PUT" : "POST";
       const endpoint = taskId
-        ? `http://localhost:4000/api/tasks/${taskId}`
-        : "http://localhost:4000/api/tasks";
+        ? `${process.env.NEXT_PUBLIC_API_URL}/tasks/${taskId}`
+        : `${process.env.NEXT_PUBLIC_API_URL}/tasks`;
 
       const response = await fetch(endpoint, {
         method,

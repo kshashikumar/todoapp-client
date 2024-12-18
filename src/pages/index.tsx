@@ -13,7 +13,7 @@ export default function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/tasks");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tasks`);
       const data = await response.json();
       setTasks(data);
     } catch (error) {

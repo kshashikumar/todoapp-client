@@ -16,13 +16,16 @@ export function TaskCard({ task, onTaskUpdated }: TaskCardProps) {
 
   const updateTask = async (id: number, updatedData: Partial<Task>) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/tasks/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedData),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/tasks/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        }
+      );
 
       if (response.ok) {
         console.log("Task updated successfully.");
@@ -41,9 +44,12 @@ export function TaskCard({ task, onTaskUpdated }: TaskCardProps) {
 
   const deleteTask = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:4000/api/tasks/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/tasks/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (response.ok) {
         console.log("Task deleted successfully.");
