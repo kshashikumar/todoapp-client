@@ -3,18 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Check, CirclePlus } from "lucide-react";
-
-const colors = [
-  "#EF4444",
-  "#F97316",
-  "#EAB308",
-  "#22C55E",
-  "#3B82F6",
-  "#6366F1",
-  "#A855F7",
-  "#EC4899",
-  "#78716C",
-];
+import { colors } from "@/constants/colors";
 
 export function TaskForm() {
   const router = useRouter();
@@ -23,6 +12,7 @@ export function TaskForm() {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (taskId) {
@@ -32,7 +22,6 @@ export function TaskForm() {
             `http://localhost:4000/api/tasks/${taskId}`
           );
           const task = await response.json();
-          console.log(task.title);
           setTitle(task.title);
           setSelectedColor(task.color);
         } catch (error) {
@@ -45,6 +34,7 @@ export function TaskForm() {
 
   const saveTask = async () => {
     setLoading(true);
+    setError("");
     try {
       const method = taskId ? "PUT" : "POST";
       const endpoint = taskId
@@ -74,6 +64,14 @@ export function TaskForm() {
     }
   };
 
+  const handleSave = async () => {
+    if (!title.trim()) {
+      setError("Task title cannot be empty.");
+      return;
+    }
+    await saveTask();
+  };
+
   return (
     <div className="mx-auto max-w-2xl px-4">
       <button
@@ -99,6 +97,7 @@ export function TaskForm() {
             onChange={(e) => setTitle(e.target.value)}
             className="w-full rounded-md border border-zinc-700 bg-zinc-800/50 p-3 text-white placeholder:text-zinc-500 focus:border-blue-500 focus:outline-none"
           />
+          {error && <p className="text-sm text-red-500">{error}</p>}
         </div>
 
         <div className="space-y-2">
@@ -130,13 +129,7 @@ export function TaskForm() {
           style={{
             backgroundColor: "var(--button-save)",
           }}
-          onClick={async () => {
-            if (!title.trim()) {
-              console.warn("Task title cannot be empty.");
-              return;
-            }
-            await saveTask();
-          }}
+          onClick={handleSave}
           disabled={loading}
         >
           {loading ? (
