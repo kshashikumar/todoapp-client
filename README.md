@@ -40,27 +40,27 @@ This is **front-end** application for **Todo App**, built with **Next.js**, **Ty
    ```
 3. Set up environment variables:
 
-- Create a `.env.local` file in the project root.
-- Add the following variable (update the URL if needed):
+   - Create a `.env.local` file in the project root.
+   - Add the following variable (update the URL if needed):
 
-```bash
-NEXT_PUBLIC_API_URL=http://localhost:4000/api
-```
+   ```bash
+   NEXT_PUBLIC_API_URL=http://localhost:4000/api
+   ```
 
 4. Run the development server:
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 5. Open the app in your browser:
 
-- Navigate to [http://localhost:3000](http://localhost:3000).
+   - Navigate to [http://localhost:3000](http://localhost:3000).
 
 ### Scripts
 
 Available scripts for development and production:
 
-- `npm run dev`: Starts the development server.
-- `npm run build`: Builds the application for production.
-- `npm start`: Starts the production server (requires a production build).
+    - `npm run dev`: Starts the development server.
+    - `npm run build`: Builds the application for production.
+    - `npm start`: Starts the production server (requires a production build).
