@@ -20,7 +20,7 @@ Setup Instructions
 
 Scripts: 
 
-npm run dev: Starts the development server.
-npm run build: Builds the production version of the app.
-npm start: Starts the production server.
+npm run dev:    (Starts the development server)
+npm run build:  (Builds the production version of the app)
+npm start:      (Starts the production server)
 
