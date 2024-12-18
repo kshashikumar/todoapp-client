@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@layer base {
+  :root {
+    --title-primary: #65a7de;
+    --title-secondary: #8981fb;
+    --button-primary-hover: #3d79a4;
+    --button-save: #376e9f;
+  }
+}
